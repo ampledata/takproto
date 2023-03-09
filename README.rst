@@ -67,19 +67,19 @@ Would return::
 parse_proto()
 -------------
 
-Given a bytearray containing a version 1 protobuf, ``parse_proto()`` will return an 
+Given bytes containing a version 1 protobuf, ``parse_proto()`` will return an 
 instance of the protobuf class. You can then access the contents as an object::
 
     import takproto
    
     ba = bytearray(b'\xbf\x01\xbf\x12\xff\x01\n\x0ba-f-G-E-V-C*$aa0b0312-b5cd-4c2c-bbbc-9c4c702162610\xa0\xa2\xc7\xb8\x82.8\xa0\xa2\xc7\xb8\x82.@\x98\xf5\xc8\xb8\x82.J\x03h-eQ3\x98T\xa7b\xfdE@Y}*~\xbe\xf3\x84P\xc0aW\\\x1c\x95\x9b\xc4:@i\x00\x00\x00\xe0\xcf\x12cAq\x00\x00\x00\xe0\xcf\x12cAz\x82\x01\x12$\n\x15192.168.1.10:4242:tcp\x12\x0bEliopoli HQ\x1a\x0c\n\x06Yellow\x12\x02HQ*\x02\x08d2F\n\x11LENOVO 20QV0007US\x12\nWinTAK-CIV\x1a\x19Microsoft Windows 10 Home"\n1.10.0.137:\x00')
 
-    parse_proto(ba)
+    parse_proto(bytes(ba))
  
 This method of calling parse_proto would return an object containing the data from the 
 protobuf. Object attributes can be accessed by calling them in a Pythonic manner.
 
-If you were to ``print(parse_proto(b))``, you would see::
+If you were to ``print(parse_proto(bytes(ba)))``, you would see::
 
     cotEvent {
         type: "a-f-G-E-V-C"
