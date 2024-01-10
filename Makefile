@@ -77,6 +77,10 @@ test_cov:
 black:
 	black .
 
+mkdocs:
+	pip install -r docs/requirements.txt
+	mkdocs serve
+
 proto:
 	for p in src-protobuf/*.proto; do \
 	  protoc -v -I=src-protobuf --python_out=takprotobuf/proto $$p; \
