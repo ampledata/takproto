@@ -174,7 +174,7 @@ Authors
 
 Copyright
 =========
-* Copyright 2023 Sensors & Signals LLC
+* Copyright Sensors & Signals LLC https://www.snstac.com
 * Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>
 
 
@@ -185,7 +185,7 @@ Python Black, otherwise Google, then PEP-8.
 
 License
 =======
-Copyright 2023 Sensors & Signals LLC
+Copyright Sensors & Signals LLC https://www.snstac.com
 
 Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>
 

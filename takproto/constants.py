@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright 2023 Sensors & Signals LLC
+# Copyright Sensors & Signals LLC https://www.snstac.com
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,18 +27,20 @@
 from enum import Enum
 
 __author__ = "Greg Albrecht <gba@snstac.com>"
-__copyright__ = "Copyright 2023 Sensors & Signals LLC"
+__copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
 __license__ = "Apache License, Version 2.0"
 
 
 DEFAULT_PROTO_HEADER = bytearray(b"\xbf")
 DEFAULT_MESH_HEADER = bytearray(b"\xbf\x01\xbf")
-ISO_8601_UTC = "%Y-%m-%dT%H:%M:%S.%fZ"
+
+W3C_XML_DATETIME: str = "%Y-%m-%dT%H:%M:%S.%fZ"
+ISO_8601_UTC = W3C_XML_DATETIME  # Issue 7: Not technically correct.
 
 
 class TAKProtoVer(Enum):
     """Enumerator for TAK Protocol Versions."""
-
+    
     XML = 0
     MESH = 1
     STREAM = 2

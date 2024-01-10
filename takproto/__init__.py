@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright 2023 Sensors & Signals LLC
+# Copyright Sensors & Signals LLC https://www.snstac.com
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@
 # SOFTWARE.
 #
 
-"""TAKProto Module.
+"""A Python module to encode & decode 'TAK Protocol Payload - Version 1' Protocol Buffer based Cursor on Target (CoT) messages.
 
 :author: Greg Albrecht <gba@snstac.com>
-:copyright: Copyright 2023 Sensors & Signals LLC
+:copyright: Copyright Sensors & Signals LLC https://www.snstac.com
 :license: MIT License
 :source: <https://github.com/snstac/takproto>
 """
+
+__version__ = "2.1.0-beta1"
 
 from .functions import (  # NOQA
     xml2proto,
@@ -40,6 +42,6 @@ from .functions import (  # NOQA
 from .constants import TAKProtoVer  # NOQA
 
 __author__ = "Greg Albrecht <gba@snstac.com>"
-__copyright__ = "Copyright 2023 Sensors & Signals LLC"
+__copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
 __license__ = "MIT License"
 __source__ = "https://github.com/snstac/takproto"

@@ -1,5 +1,5 @@
 #
-# Copyright 2023 Sensors & Signals LLC
+# Copyright Sensors & Signals LLC https://www.snstac.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 # Author:: Greg Albrecht <gba@snstac.com>
-# Copyright:: Copyright 2023 Sensors & Signals LLC
+# Copyright:: Copyright Sensors & Signals LLC https://www.snstac.com
 # License:: Apache License, Version 2.0
 #
 

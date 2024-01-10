@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright 2023 Sensors & Signals LLC
+# Copyright Sensors & Signals LLC https://www.snstac.com
 # Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
