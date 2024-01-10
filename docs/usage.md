@@ -11,7 +11,7 @@ Given a `bytes` CoT XML message (or the path to an file containing a CoT XML mes
 
 ## UDP Multicast (Mesh SA)
 
-```py
+``` py
 import takproto
 
 cot = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
