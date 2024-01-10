@@ -32,14 +32,19 @@
 
 __version__ = "2.1.0-beta1"
 
-from .functions import (  # NOQA
-    xml2proto,
-    parse_proto,
-    parse_mesh,
-    parse_stream,
-    format_time,
-)
-from .constants import TAKProtoVer  # NOQA
+# Python 3.6 test/build work-around:
+try:
+    from .functions import (  # NOQA
+        xml2proto,
+        parse_proto,
+        parse_mesh,
+        parse_stream,
+        format_time,
+    )
+    from .constants import TAKProtoVer  # NOQA
+except ImportError:
+    import warnings
+    warnings.warn("Unable to import required modules, ignoring (Python 3.6 build work-around).")
 
 __author__ = "Greg Albrecht <gba@snstac.com>"
 __copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
