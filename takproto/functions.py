@@ -142,7 +142,7 @@ def xml2proto(
             ]
             for elem in detail.iterfind("*"):
                 if elem.tag not in known_elem:
-                    new_detail.xmlDetail = ET.tostring(elem).strip()
+                    new_detail.xmlDetail += ET.tostring(elem).strip().decode()
 
         contact = detail.find("contact")
         if contact is not None:
