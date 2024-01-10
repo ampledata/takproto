@@ -44,7 +44,10 @@ try:
     from .constants import TAKProtoVer  # NOQA
 except ImportError:
     import warnings
-    warnings.warn("Unable to import required modules, ignoring (Python 3.6 build work-around).")
+
+    warnings.warn(
+        "Unable to import required modules, ignoring (Python 3.6 build work-around)."
+    )
 
 __author__ = "Greg Albrecht <gba@snstac.com>"
 __copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"

@@ -40,7 +40,7 @@ ISO_8601_UTC = W3C_XML_DATETIME  # Issue 7: Not technically correct.
 
 class TAKProtoVer(Enum):
     """Enumerator for TAK Protocol Versions."""
-    
+
     XML = 0
     MESH = 1
     STREAM = 2

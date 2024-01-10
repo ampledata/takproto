@@ -94,7 +94,10 @@ class TestFunctions(unittest.TestCase):
 
         self.assertEqual(cot_event.type, "a-f-G-E-V-C")
         self.assertEqual(cot_event.uid, "aa0b0312-b5cd-4c2c-bbbc-9c4c70216261")
-        self.assertEqual(cot_event.detail.xmlDetail, '<uid Droid="Eliopoli HQ" /><another test="1" />')
+        self.assertEqual(
+            cot_event.detail.xmlDetail,
+            '<uid Droid="Eliopoli HQ" /><another test="1" />',
+        )
         self.assertEqual(cot_event.detail.contact.callsign, "Eliopoli HQ")
 
     def test_xml2proto_stream(self):
@@ -122,5 +125,8 @@ class TestFunctions(unittest.TestCase):
 
         self.assertEqual(cot_event.type, "a-f-G-E-V-C")
         self.assertEqual(cot_event.uid, "aa0b0312-b5cd-4c2c-bbbc-9c4c70216261")
-        self.assertEqual(cot_event.detail.xmlDetail, '<uid Droid="Eliopoli HQ" /><another test="1" />')
+        self.assertEqual(
+            cot_event.detail.xmlDetail,
+            '<uid Droid="Eliopoli HQ" /><another test="1" />',
+        )
         self.assertEqual(cot_event.detail.contact.callsign, "Eliopoli HQ")
