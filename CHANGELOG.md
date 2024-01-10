@@ -1,4 +1,4 @@
-# TAKProto 2.1.0
+## TAKProto 2.1.0
 
 - Fixes #6: Fix xmlDetail compostion (include all details). Thanks @sei-jmattson!
 - Fixes #7: CoT Time/Start/Stale timestamps aren't actually ISO-8601.
@@ -10,7 +10,7 @@
 - Documentation Updates.
 - Linting & Style.
 
-# TAKProto 2.0.0
+## TAKProto 2.0.0
 
 - Documentation Updates.
 - Fixed example error and problem encoding xmldetail.
@@ -18,18 +18,18 @@
 - Fixes #3: parse_proto in README is inaccurate. Thanks @sei-jmattson!
 - Fixes #2: Include generated protobuf folder in the install. Thanks @shelbydavis!
 
-# TAKProto 1.0.2
+## TAKProto 1.0.2
 
 Documentation updates.
 
-# TAKProto 1.0.1
+## TAKProto 1.0.1
 
 Documentation updates.
 
-# TAKProto 1.0.0
+## TAKProto 1.0.0
 
 Initial public release of re-write by @ampledata
 
-# takprotobuf 0.0.1
+## takprotobuf 0.0.1
 
 Initial public release from @dB-SPL
