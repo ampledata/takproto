@@ -1,16 +1,11 @@
-.. image:: ./docs/pytak_logo-256x264.png
-    :alt: PyTAK Logo
+![ATAK Screenshot with PyTAK Logo.](atak_screenshot_with_pytak_logo-x25.jpg)
 
-takproto: TAK Protocol Python Module
+TAKProto: TAK Protocol Python Module
 ************************************
 
-``takproto`` is a Python module to encode & decode TAK Protocol Cursor on Target (CoT) messages.
+TAKProto is a Python module for encoding & decoding TAK Protocol Payloads, for use with `TAK Products <https://tak.gov/>`_ including ATAK, WinTAK, iTAK, TAKX, TAK Tracker & TAK Server. `takproto` includes functions for converting TAK Protocol Protobuf messages as Python objects, and serializing CoT XML messages as Protobuf.
 
-Documentation
-=============
-
-See `PyTAK documentation <https://pytak.rtfd.io/>`_ for instructions on getting 
-started with PyTAK, examples, configuration & troubleshooting options.
+`Documentation is available here. <https://takproto.rtfd.io/>`_
 
 License
 =======
@@ -35,22 +30,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Origin
-======
-
-``takproto`` is a fork & complete re-write of @dB-SPL's 
-`takprotobuf <https://github.com/dB-SPL/takprotobuf>`_.
-
-Notable differences between the original ``takprotobuf`` & this module ``takproto``:
-
-1. Rebuild proto files using `Protocol Buffers v21 <https://protobuf.dev/>`_.
-2. Added support for encoding & decoding plain XML, Mesh & Stream TAK Protocol formats.
-3. Remove dependency on ``untangle`` module, allowing compatibility with Python 3.6 
-   through 3.10. Unfortunately many single-board computers (i.e. Raspberry Pi) still 
-   ship with Python 3.6, this change allows ``takproto`` to run on those systems.
-4. Added ``xmlDetails`` detection for supporting undefined Protobuf elements in XML.
-5. > 90% test coverage with **new** Unit Tests.
-6. PEP-8 & Black style, linting, documentation & formatting of code.
-
-As much as possible @db-SPL's licensing terms were honored in this fork.

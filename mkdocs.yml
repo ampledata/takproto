@@ -8,7 +8,11 @@ copyright: Copyright Sensors & Signals LLC https://www.snstac.com
 theme:
   name: material
   highlightjs: true
-
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate 
+    
 plugins:
   - include-markdown:
       opening_tag: "{!"

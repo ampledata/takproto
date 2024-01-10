@@ -11,7 +11,7 @@ Given a `bytes` CoT XML message (or the path to an file containing a CoT XML mes
 
 ## UDP Multicast (Mesh SA)
 
-``` py
+```py linenums="1" hl_lines="16" title="cot2mesh.py"
 import takproto
 
 cot = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
@@ -37,11 +37,11 @@ By default, `xml2proto()` returns data as TAK Protocol - Version 1 Protobuf in M
 bytearray(b'\xbf\x01\xbf\x12\xff\x01\n\x0ba-f-G-E-V-C*$aa0b0312-b5cd-4c2c-bbbc-9c4c702162610\xa0\xa2\xc7\xb8\x82.8\xa0\xa2\xc7\xb8\x82.@\x98\xf5\xc8\xb8\x82.J\x03h-eQ3\x98T\xa7b\xfdE@Y}*~\xbe\xf3\x84P\xc0aW\\\x1c\x95\x9b\xc4:@i\x00\x00\x00\xe0\xcf\x12cAq\x00\x00\x00\xe0\xcf\x12cAz\x82\x01\x12$\n\x15192.168.1.10:4242:tcp\x12\x0bEliopoli HQ\x1a\x0c\n\x06Yellow\x12\x02HQ*\x02\x08d2F\n\x11LENOVO 20QV0007US\x12\nWinTAK-CIV\x1a\x19Microsoft Windows 10 Home"\n1.10.0.137:\x00')
 ```
 
-# TCP Unicast (TAK Server)
+## TCP Unicast (TAK Server)
 
 Calling `xml2proto()` with the `takproto.TAKProtoVer.STREAM` ENUM parameter returns data as TAK Protocol - Version 1 Protobuf in Stream format (TCP Unicast):
 
-```py
+```py linenums="1" hl_lines="16" title="cot2stream.py"
 import takproto
 
 cot = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
@@ -71,7 +71,7 @@ bytearray(b'\xbf\x9f\x02\x12\xff\x01\n\x0ba-f-G-E-V-C*$aa0b0312-b5cd-4c2c-bbbc-9
 
 Given a `bytearray` TAK Protocol - Version 1 Protobuf, `parse_proto()` returns an instance of the Protobuf class. You can then access the contents as an object:
 
-```py
+```py linenums="1" hl_lines="5" title="decode_tak.py"
 import takproto
 
 pb = bytearray(b'\xbf\x01\xbf\x12\xff\x01\n\x0ba-f-G-E-V-C*$aa0b0312-b5cd-4c2c-bbbc-9c4c702162610\xa0\xa2\xc7\xb8\x82.8\xa0\xa2\xc7\xb8\x82.@\x98\xf5\xc8\xb8\x82.J\x03h-eQ3\x98T\xa7b\xfdE@Y}*~\xbe\xf3\x84P\xc0aW\\\x1c\x95\x9b\xc4:@i\x00\x00\x00\xe0\xcf\x12cAq\x00\x00\x00\xe0\xcf\x12cAz\x82\x01\x12$\n\x15192.168.1.10:4242:tcp\x12\x0bEliopoli HQ\x1a\x0c\n\x06Yellow\x12\x02HQ*\x02\x08d2F\n\x11LENOVO 20QV0007US\x12\nWinTAK-CIV\x1a\x19Microsoft Windows 10 Home"\n1.10.0.137:\x00')
@@ -83,7 +83,7 @@ This method of calling `parse_proto` would return an object containing the data 
 
 If you were to `print(cot)`, you would see:
 
-```json
+```json linenums="1"
 cotEvent {
     type: "a-f-G-E-V-C"
     uid: "aa0b0312-b5cd-4c2c-bbbc-9c4c70216261"
