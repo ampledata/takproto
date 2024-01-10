@@ -30,7 +30,7 @@
 :source: <https://github.com/snstac/takproto>
 """
 
-__version__ = "2.1.0-beta3"
+__version__ = "2.1.0"
 
 # Python 3.6 test/build work-around:
 try:
