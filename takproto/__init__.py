@@ -22,7 +22,7 @@
 # SOFTWARE.
 #
 
-"""A Python module to encode & decode 'TAK Protocol Payload - Version 1' Protocol Buffer based Cursor on Target (CoT) messages.
+"""TAKProto: Encode & Decode TAK Protocol Payloads using Python.
 
 :author: Greg Albrecht <gba@snstac.com>
 :copyright: Copyright Sensors & Signals LLC https://www.snstac.com
@@ -30,7 +30,7 @@
 :source: <https://github.com/snstac/takproto>
 """
 
-__version__ = "2.1.0-beta1"
+__version__ = "2.1.0-beta2"
 
 # Python 3.6 test/build work-around:
 try:
