@@ -1,3 +1,9 @@
+## TAKProto 2.1.1
+
+- Fixes #12: Add Changelog.  
+- Fixes #13: Missing Proto dir?
+- Fixes #14: Don't throw away ImportError in __init__.py
+
 ## TAKProto 2.1.0
 
 - Fixes #6: Fix xmlDetail compostion (include all details). Thanks @sei-jmattson!
