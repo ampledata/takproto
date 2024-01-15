@@ -1,7 +1,7 @@
-site_name: TAKProto - A Python TAK Protocol Protobuf Module
+site_name: TAKProto - Send & Receive Team Awareness Kit (TAK) packets with Python.
 site_url: https://takproto.rtfd.io/
 repo_url: https://github.com/snstac/takproto/
-site_description: A Python module to encode & decode 'TAK Protocol Payload - Version 1' Protocol Buffer based Cursor on Target (CoT) messages.
+site_description: A Python module to encode & decode Team Awareness Kit (TAK) Protocol-based Cursor on Target (CoT) messages.
 site_author: Greg Albrecht <gba@snstac.com>
 copyright: Copyright Sensors & Signals LLC https://www.snstac.com
 
