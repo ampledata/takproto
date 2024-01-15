@@ -30,7 +30,7 @@
 :source: <https://github.com/snstac/takproto>
 """
 
-__version__ = "2.1.0"
+__version__ = "2.1.1-beta1"
 
 # Python 3.6 test/build work-around:
 try:
@@ -42,12 +42,13 @@ try:
         format_time,
     )
     from .constants import TAKProtoVer  # NOQA
-except ImportError:
+except ImportError as exc:
     import warnings
 
     warnings.warn(
-        "Unable to import required modules, ignoring (Python 3.6 build work-around)."
+        "Unable to import required modules, IGNORING for Python 3.6 compat. Original Exception: "
     )
+    warnings.warn(exc)
 
 __author__ = "Greg Albrecht <gba@snstac.com>"
 __copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
