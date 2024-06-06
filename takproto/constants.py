@@ -35,7 +35,7 @@ DEFAULT_PROTO_HEADER = bytearray(b"\xbf")
 DEFAULT_MESH_HEADER = bytearray(b"\xbf\x01\xbf")
 
 W3C_XML_DATETIME: str = "%Y-%m-%dT%H:%M:%S.%fZ"
-ISO_8601_UTC = W3C_XML_DATETIME  # Issue 7: Not technically correct.
+ISO_8601_UTC = "%Y-%m-%dT%H:%M:%S.%fZ"
 
 
 class TAKProtoVer(Enum):
