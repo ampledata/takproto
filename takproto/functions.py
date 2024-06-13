@@ -37,6 +37,7 @@ from takproto.constants import (
     ISO_8601_UTC,
     DEFAULT_MESH_HEADER,
     DEFAULT_PROTO_HEADER,
+    DEFAULT_XML_HEADER,
     TAKProtoVer,
 )
 from takproto.proto import TakMessage
@@ -50,6 +51,8 @@ def parse_proto(msg: bytearray) -> Optional[bytearray]:
         parsed = parse_mesh(msg)
     elif msg[0] in DEFAULT_PROTO_HEADER:
         parsed = parse_stream(msg)
+    elif msg[:5] == DEFAULT_XML_HEADER:
+        parsed = xml2message(msg)
     return parsed
 
 
@@ -75,9 +78,7 @@ def format_time(time: str) -> int:
     return int(s_time.timestamp() * 1000)
 
 
-def xml2proto(
-    xml: str, protover: Optional[TAKProtoVer] = None
-):  # NOQA pylint: disable=too-many-locals,too-many-branches,too-many-statements
+def xml2message(xml: str) -> TakMessage:  # NOQA pylint: disable=too-many-locals,too-many-branches,too-many-statements
     """Convert plain XML CoT to Protobuf."""
     event = ET.fromstring(xml)
     tak_message = TakMessage()
@@ -129,7 +130,8 @@ def xml2proto(
         # If this is a GeoChat message, write the contents of <detail> in xmlDetail.
         if uid and "GeoChat." in uid:
             pattern = "<detail>(.*?)</detail>"
-            xmldetailstr = re.search(pattern, xml).group(1)
+            target = ET.tostring(detail).decode("utf-8")
+            xmldetailstr = re.search(pattern, target).group(1)
             new_detail.xmlDetail = xmldetailstr
         else:
             # Add unknown elements to xmlDetail field.
@@ -194,6 +196,12 @@ def xml2proto(
                 if attrib_val:
                     setattr(new_detail.track, attrib, float(attrib_val))
 
+    return tak_message
+
+def xml2proto(
+    xml: str, protover: Optional[TAKProtoVer] = None
+):
+    tak_message = xml2message(xml)
     output = msg2proto(tak_message, protover)
     return output
 
