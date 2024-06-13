@@ -70,7 +70,8 @@ def parse_stream(msg):
 
 def format_time(time: str) -> int:
     """Format timestamp as microseconds."""
-    s_time = datetime.strptime(time + "+0000", ISO_8601_UTC + "%z")
+    fmt = ISO_8601_UTC if "." in time else ISO_8601_UTC.replace(".%f", "")
+    s_time = datetime.strptime(time + "+0000", fmt + "%z")
     return int(s_time.timestamp() * 1000)
 
 
