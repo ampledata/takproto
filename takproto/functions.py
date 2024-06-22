@@ -31,10 +31,9 @@ import xml.etree.ElementTree as ET
 
 from datetime import datetime
 from io import BytesIO
-from typing import Optional, Union
+from typing import Optional
 
-import delimited_protobuf as dpb
-
+import takproto.delimited_protobuf as dpb
 from takproto.constants import (
     ISO_8601_UTC,
     W3C_XML_DATETIME,
