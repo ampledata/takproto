@@ -1,4 +1,4 @@
-# Send & Receive data from TAK with Python
+# Encode and Decode TAK data with Python
 
 TAKProto is a Python module for encoding & decoding TAK Protocol Payloads, for use 
 with [TAK Products](https://www.tak.gov/) including ATAK, WinTAK, iTAK, TAKX, TAK 

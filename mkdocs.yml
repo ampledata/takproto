@@ -1,4 +1,4 @@
-site_name: A Python package for the TAK Protocol.
+site_name: Encode and Decode TAK data with Python
 site_url: https://takproto.rtfd.io/
 repo_url: https://github.com/snstac/takproto/
 site_description: A Python module to encode & decode Team Awareness Kit (TAK) Protocol-based Cursor on Target (CoT) messages.
