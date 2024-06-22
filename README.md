@@ -8,6 +8,9 @@ Protobuf messages to Python objects, and serializing CoT XML messages as Protobu
 [Documentation is available here.](https://takproto.rtfd.io/)
 
 ## Copyright & License
+
+TAKProto is licensed under the MIT License.
+
 Copyright Sensors & Signals LLC https://www.snstac.com
 
 Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>
@@ -29,3 +32,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+delimited_protobuf.py licensed under the Apache License, Version 2.0 and is 
+copyright 2024 Frank Dai https://github.com/soulmachine
