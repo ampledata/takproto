@@ -25,7 +25,7 @@
 
 """TAKProto: Encode & Decode TAK Protocol Payloads using Python."""
 
-__version__ = "3.0.0-beta3"
+__version__ = "3.0.0-beta4"
 
 # COMPAT Python 3.6 import work-around.
 try:
