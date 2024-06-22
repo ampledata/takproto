@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# __init__.py from https://github.com/snstac/takproto
 #
 # Copyright Sensors & Signals LLC https://www.snstac.com
 #
@@ -22,17 +23,11 @@
 # SOFTWARE.
 #
 
-"""TAKProto: Encode & Decode TAK Protocol Payloads using Python.
+"""TAKProto: Encode & Decode TAK Protocol Payloads using Python."""
 
-:author: Greg Albrecht <gba@snstac.com>
-:copyright: Copyright Sensors & Signals LLC https://www.snstac.com
-:license: MIT License
-:source: <https://github.com/snstac/takproto>
-"""
+__version__ = "3.0.0-beta1"
 
-__version__ = "2.1.1"
-
-# Python 3.6 test/build work-around:
+# COMPAT Python 3.6 import work-around.
 try:
     from .functions import (  # NOQA
         xml2proto,
@@ -44,12 +39,5 @@ try:
     from .constants import TAKProtoVer  # NOQA
 except ImportError as exc:
     import warnings
-    warnings.warn(
-        "Unable to import required modules, IGNORING for Python 3.6 compat. Original Exception: "
-    )
-    warnings.warn(str(exc))
 
-__author__ = "Greg Albrecht <gba@snstac.com>"
-__copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
-__license__ = "MIT License"
-__source__ = "https://github.com/snstac/takproto"
+    warnings.warn(f"COMPAT Python 3.6. Ignoring Exception: {str(exc)}")

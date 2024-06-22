@@ -1,16 +1,15 @@
-.. image:: https://takproto.readthedocs.io/en/latest/atak_screenshot_with_pytak_logo-x25.jpg
-   :alt: ATAK Screenshot with PyTAK Logo.
-   :target: https://github.com/snstac/takproto/blob/main/docs/atak_screenshot_with_pytak_logo.jpg
+![ATAK Screenshot with PyTAK Logo.](https://takproto.readthedocs.io/en/latest/media/atak_screenshot_with_pytak_logo-x25.jpg)
 
-TAKProto: TAK Protocol Python Module
-************************************
+# Send & Receive data from TAK with Python
 
-TAKProto is a Python module for encoding & decoding TAK Protocol Payloads, for use with `TAK Products <https://tak.gov/>`_ including ATAK, WinTAK, iTAK, TAKX, TAK Tracker & TAK Server. TAKProto includes functions for converting TAK Protocol Protobuf messages to Python objects, and serializing CoT XML messages as Protobuf.
+TAKProto is a Python module for encoding & decoding TAK Protocol Payloads, for use 
+with [TAK Products](https://www.tak.gov/) including ATAK, WinTAK, iTAK, TAKX, TAK 
+Tracker & TAK Server. TAKProto includes functions for converting TAK Protocol 
+Protobuf messages to Python objects, and serializing CoT XML messages as Protobuf.
 
-`Documentation is available here. <https://takproto.rtfd.io/>`_
+[Documentation is available here.](https://takproto.rtfd.io/)
 
-License
-=======
+## Copyright & License
 Copyright Sensors & Signals LLC https://www.snstac.com
 
 Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# constants.py from https://github.com/snstac/takproto
 #
 # Copyright Sensors & Signals LLC https://www.snstac.com
 #
@@ -25,11 +26,6 @@
 """TAKProto Constants."""
 
 from enum import Enum
-
-__author__ = "Greg Albrecht <gba@snstac.com>"
-__copyright__ = "Copyright Sensors & Signals LLC https://www.snstac.com"
-__license__ = "Apache License, Version 2.0"
-
 
 DEFAULT_PROTO_HEADER = bytearray(b"\xbf")
 DEFAULT_MESH_HEADER = bytearray(b"\xbf\x01\xbf")

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# constants.py from https://github.com/snstac/takproto
 #
 # Copyright Sensors & Signals LLC https://www.snstac.com
 # Copyright 2020 Delta Bravo-15 <deltabravo15ga@gmail.com>
@@ -22,6 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+
 """TAKProto Functions for manipulating TAK Protocol Version 1 messages."""
 
 import re
@@ -29,7 +31,7 @@ import xml.etree.ElementTree as ET
 
 from datetime import datetime
 from io import BytesIO
-from typing import Optional
+from typing import Optional, Union
 
 import delimited_protobuf as dpb
 
@@ -44,15 +46,15 @@ from takproto.constants import (
 from takproto.proto import TakMessage
 
 
-def parse_proto(msg: bytearray) -> Optional[bytearray]:
+def parse_proto(msg: Union[bytearray, str]) -> Optional[bytearray]:
     """Parse TAK Protocol Version 1 Mesh & Stream message."""
     parsed = None
 
     if msg[:3] == DEFAULT_MESH_HEADER:
         parsed = parse_mesh(msg)
-    elif msg[0] in DEFAULT_PROTO_HEADER:
+    elif msg[0] == DEFAULT_PROTO_HEADER:
         parsed = parse_stream(msg)
-    elif msg[:5] == DEFAULT_XML_HEADER:
+    elif msg[:5] == DEFAULT_XML_HEADER and isinstance(msg, str):
         parsed = xml2message(msg)
     return parsed
 
@@ -81,7 +83,11 @@ def format_time(time: str) -> int:
     return int(s_time.timestamp() * 1000)
 
 
-def xml2message(xml: str) -> TakMessage:  # NOQA pylint: disable=too-many-locals,too-many-branches,too-many-statements
+def xml2message(
+    xml: str,
+) -> (
+    TakMessage
+):  # NOQA pylint: disable=too-many-locals,too-many-branches,too-many-statements
     """Convert plain XML CoT to Protobuf."""
     event = ET.fromstring(xml)
     tak_message = TakMessage()
@@ -134,8 +140,10 @@ def xml2message(xml: str) -> TakMessage:  # NOQA pylint: disable=too-many-locals
         if uid and "GeoChat." in uid:
             pattern = "<detail>(.*?)</detail>"
             target = ET.tostring(detail).decode("utf-8")
-            xmldetailstr = re.search(pattern, target).group(1)
-            new_detail.xmlDetail = xmldetailstr
+            re_search = re.search(pattern, target)
+            if re_search:
+                xmldetailstr = re_search.group(1)
+                new_detail.xmlDetail = xmldetailstr
         else:
             # Add unknown elements to xmlDetail field.
             known_elem = [
@@ -201,9 +209,9 @@ def xml2message(xml: str) -> TakMessage:  # NOQA pylint: disable=too-many-locals
 
     return tak_message
 
-def xml2proto(
-    xml: str, protover: Optional[TAKProtoVer] = None
-):
+
+def xml2proto(xml: str, protover: Optional[TAKProtoVer] = None):
+    """Convert TAK XML COT to TAK Protobuf COT."""
     tak_message = xml2message(xml)
     output = msg2proto(tak_message, protover)
     return output

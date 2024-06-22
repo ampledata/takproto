@@ -1,3 +1,21 @@
+## TAKProto 3.0.0
+
+Happy Summer Solstice!
+
+- Fixes #15: Time data from iTak not parsed.
+- Fixes #12: Add CHANGELOG
+- Fixes #19: Support timestamps without microseconds. Thanks @sei-jmattson
+- Fixes #17/#18: Support mixed-mode rx. Thanks @sei-jmattson
+- Fixes #16: Fix datetime parsing for newer TAK clients that don't include microseconds in the timestamp. Thanks @brian7704
+- Rewrote GitHub actions, moved most logic to shell script and Makefile.
+- Renamed Debian package from python3-takproto to takproto.
+- Standardized Makefile for all PyTAK based programs.
+- Cleaned, simplified and expanded documentation.
+- Created Makefile jobs for Debian packaging and TAKProto customization.
+- Moved all media to media sub directory under docs/.
+- Converted README.rst to README.md.
+- Style & Linting of code.
+
 ## TAKProto 2.1.1
 
 - Fixes #12: Add Changelog.  

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# setup.py from https://github.com/snstac/takproto
 #
 # Copyright Sensors & Signals LLC https://www.snstac.com
 # Copyright 2020 Delta Bravo-15
@@ -24,10 +25,7 @@
 #
 
 
-"""Setup for the Python TAK Protocol Packet - Version 1 Module.
-
-:source: <https://github.com/snstac/takproto>
-"""
+"""Setup for the Python TAK Protocol Package."""
 
 from setuptools import setup
 

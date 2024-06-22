@@ -15,4 +15,4 @@ TAK Products configured for connecting to a TAK Server will send TAK Protocol Ve
 
 The `takproto` module supports encoding and decoding all 3 formats of CoT messages.
 
-![TAK Protocol Chart](takproto_chart.png)
+![TAK Protocol Chart](media/takproto_chart.png)
