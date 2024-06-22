@@ -28,32 +28,36 @@ import unittest
 import takproto
 
 
-__author__ = "Greg Albrecht <gba@snstac.com>"
-__copyright__ = "Copyright 2023 Sensors & Signals LLC"
-__license__ = "Apache License, Version 2.0"
-
-
 class TestFunctions(unittest.TestCase):
-    def test_format_timestamp(self):
-        """Test formatting timestamp to and from Protobuf format."""
+
+    def test_format_timestamp1(self):
+        """Test formatting timestamp to and from Protobuf format 1."""
         t_time = "2020-02-08T18:10:44.000000Z"
         t_ts = 1581185444000
         ts = takproto.format_time(t_time)
         self.assertEqual(ts, t_ts)
 
+    def test_format_timestamp2(self):
+        """Test formatting timestamp to and from Protobuf format 2."""
+        t_time = "2020-02-08T18:10:44.000000Z"
+        t_ts = 1581185444000
         t_ts2 = t_ts / 1000
         time2 = datetime.fromtimestamp(t_ts2, timezone.utc).strftime(
             "%Y-%m-%dT%H:%M:%S.%fZ"
         )
         self.assertEqual(time2, t_time)
 
-    def test_format_timestamp_without_subseconds(self):
-        """Test formatting timestamp to and from Protobuf format."""
+    def test_format_timestamp_without_subseconds1(self):
+        """Test formatting timestamp to and from Protobuf format 1."""
         t_time = "2020-02-08T18:10:44Z"
         t_ts = 1581185444000
         ts = takproto.format_time(t_time)
         self.assertEqual(ts, t_ts)
 
+    def test_format_timestamp_without_subseconds2(self):
+        """Test formatting timestamp to and from Protobuf format 2."""
+        t_time = "2020-02-08T18:10:44Z"
+        t_ts = 1581185444000
         t_ts2 = t_ts / 1000
         time2 = datetime.fromtimestamp(t_ts2, timezone.utc).strftime(
             "%Y-%m-%dT%H:%M:%SZ"
@@ -153,6 +157,8 @@ class TestFunctions(unittest.TestCase):
         t_ba = bytearray(t_xml, encoding="utf-8")
 
         parsed = takproto.parse_proto(t_ba)
+        print(parsed)
+        print(type(parsed))
         cot_event = parsed.cotEvent
 
         self.assertEqual(cot_event.type, "a-f-G-E-V-C")

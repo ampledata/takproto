@@ -1,5 +1,3 @@
-![ATAK Screenshot with PyTAK Logo.](https://takproto.readthedocs.io/en/latest/media/atak_screenshot_with_pytak_logo-x25.jpg)
-
 # Send & Receive data from TAK with Python
 
 TAKProto is a Python module for encoding & decoding TAK Protocol Payloads, for use 

@@ -46,15 +46,14 @@ from takproto.constants import (
 from takproto.proto import TakMessage
 
 
-def parse_proto(msg: Union[bytearray, str]) -> Optional[bytearray]:
+def parse_proto(msg: bytearray) -> Optional[TakMessage]:
     """Parse TAK Protocol Version 1 Mesh & Stream message."""
     parsed = None
-
     if msg[:3] == DEFAULT_MESH_HEADER:
         parsed = parse_mesh(msg)
-    elif msg[0] == DEFAULT_PROTO_HEADER:
+    elif msg[0] in DEFAULT_PROTO_HEADER:
         parsed = parse_stream(msg)
-    elif msg[:5] == DEFAULT_XML_HEADER and isinstance(msg, str):
+    elif msg[:5] == DEFAULT_XML_HEADER:
         parsed = xml2message(msg)
     return parsed
 
@@ -67,7 +66,7 @@ def parse_mesh(msg):
     return protobuf
 
 
-def parse_stream(msg):
+def parse_stream(msg) -> TakMessage:
     """Parse TAK Protocol Version 1 Stream message."""
     bio = BytesIO(msg[1:])
     msg = dpb.read(bio, TakMessage)
@@ -77,14 +76,14 @@ def parse_stream(msg):
 def format_time(time: str) -> int:
     """Format timestamp as microseconds."""
     try:
-        s_time = datetime.strptime(time, ISO_8601_UTC)
+        s_time = datetime.strptime(time + "+0000", ISO_8601_UTC + "%z")
     except ValueError:
-        s_time = datetime.strptime(time, W3C_XML_DATETIME)
+        s_time = datetime.strptime(time + "+0000", W3C_XML_DATETIME + "%z")
     return int(s_time.timestamp() * 1000)
 
 
 def xml2message(
-    xml: str,
+    xml: bytearray,
 ) -> (
     TakMessage
 ):  # NOQA pylint: disable=too-many-locals,too-many-branches,too-many-statements
