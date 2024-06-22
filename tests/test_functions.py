@@ -47,6 +47,19 @@ class TestFunctions(unittest.TestCase):
         )
         self.assertEqual(time2, t_time)
 
+    def test_format_timestamp_without_subseconds(self):
+        """Test formatting timestamp to and from Protobuf format."""
+        t_time = "2020-02-08T18:10:44Z"
+        t_ts = 1581185444000
+        ts = takproto.format_time(t_time)
+        self.assertEqual(ts, t_ts)
+
+        t_ts2 = t_ts / 1000
+        time2 = datetime.fromtimestamp(t_ts2, timezone.utc).strftime(
+            "%Y-%m-%dT%H:%M:%SZ"
+        )
+        self.assertEqual(time2, t_time)
+
     def test_xml2proto_default(self):
         """Test encoding XML string as Protobuf bytearray."""
         t_xml = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?>

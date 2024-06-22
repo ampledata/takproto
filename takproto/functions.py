@@ -35,6 +35,7 @@ import delimited_protobuf as dpb
 
 from takproto.constants import (
     ISO_8601_UTC,
+    W3C_XML_DATETIME,
     DEFAULT_MESH_HEADER,
     DEFAULT_PROTO_HEADER,
     TAKProtoVer,
@@ -70,7 +71,10 @@ def parse_stream(msg):
 
 def format_time(time: str) -> int:
     """Format timestamp as microseconds."""
-    s_time = datetime.strptime(time + "+0000", ISO_8601_UTC + "%z")
+    try:
+        s_time = datetime.strptime(time, ISO_8601_UTC)
+    except ValueError:
+        s_time = datetime.strptime(time, W3C_XML_DATETIME)
     return int(s_time.timestamp() * 1000)
 
 
